@@ -1,3 +1,13 @@
 <audio controls>
   <source src="https://ais-sa15.cdnstream1.com/4550_128.mp3" type="audio/mpeg">
 </audio>
+
+<script>
+  const audio = document.querySelector('audio');
+  audio.addEventListener('error', () => {
+    const currentSrc = audio.src;
+    audio.src = ''; 
+    audio.src = currentSrc;
+    audio.play();
+  });
+</script>
