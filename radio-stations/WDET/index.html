@@ -10,4 +10,11 @@
     audio.src = currentSrc;
     audio.play();
   });
+  
+  setInterval(() => {
+    if (audio.paused && audio.networkState !== 0) {
+      audio.load();
+      audio.play();
+    }
+  }, 2000);
 </script>
